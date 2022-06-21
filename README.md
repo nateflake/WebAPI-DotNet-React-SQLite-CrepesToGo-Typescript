@@ -7,6 +7,10 @@
 > In the terminal:
   dotnet ef database update
 
+## TO ADD NEW MIGRATION (not necessary):
+> dotnet ef migrations add InitialCreate -o Data/Migrations
+> dotnet ef database update
+
 ## RUN DOTNET
 > In the terminal:
    dotnet watch run

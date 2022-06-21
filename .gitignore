@@ -445,3 +445,5 @@ $RECYCLE.BIN/
 .vscode
 store.db-shm
 store.db-wal
+
+REACT.md
