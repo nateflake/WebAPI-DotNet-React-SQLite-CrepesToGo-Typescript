@@ -8,9 +8,16 @@
   dotnet ef database update
 
 ## TO ADD NEW MIGRATION (not necessary):
-> dotnet ef migrations add InitialCreate -o Data/Migrations
+> dotnet ef migrations add <name(InitialCreate)> -o Data/Migrations
 > dotnet ef database update
 
+## ADD NEW DB TABLE THROUGH MIGRATION
+> In the terminal:
+  - cd to solution folder
+  - dotnet ef migrations add <DBSetName>EntityAdded
+  - apply the migration:
+    dotnet watch run
+    
 ## RUN DOTNET
 > In the terminal:
    dotnet watch run
