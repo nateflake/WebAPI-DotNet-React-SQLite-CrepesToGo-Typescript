@@ -2,7 +2,6 @@ import { Alert, AlertTitle, Button, ButtonGroup, List, ListItem, ListItemText, T
 import { Container } from "@mui/system";
 import { useState } from "react";
 import agent from "../../app/api/agent";
-import LoadingComponent from "../../app/layout/LoadingComponent";
 
 export default function AboutPage() {
   const [validationErrors, setValidationErrors] = useState<string[]>([]);
@@ -41,7 +40,8 @@ export default function AboutPage() {
         </Button>
 
       </ButtonGroup>
-      {validationErrors.length > 0 &&
+      {
+        validationErrors.length > 0 &&
         <Alert severity='error'>
           <AlertTitle>Validation Errors</AlertTitle>
           <List>
@@ -51,7 +51,8 @@ export default function AboutPage() {
               </ListItem>
             ))}
           </List>
-        </Alert>}
+        </Alert>
+      }
     </Container>
   )
 }
