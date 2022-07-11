@@ -20,6 +20,7 @@ import Login from "../../features/account/Login";
 import Register from "../../features/account/Register";
 import { fetchCurrentUser } from "../../features/account/accountSlice";
 import PrivateRoute from "./PrivateRoute";
+import Orders from "../../features/orders/Orders";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -65,6 +66,7 @@ function App() {
           <Route path='/catalog/:id' component={ProductDetails}></Route>
           <Route path='/basket' component={BasketPage}></Route>
           <PrivateRoute path='/checkout' component={CheckoutPage}></PrivateRoute>
+          <PrivateRoute path='/orders' component={Orders}></PrivateRoute>
           <Route path='/about' component={AboutPage}></Route>
           <Route path='/contact' component={ContactPage}></Route>
           <Route path='/login' component={Login}></Route>

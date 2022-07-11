@@ -14,3 +14,12 @@
 > in terminal
   cd into <react app folder> ("client")
     npm install react-hook-form
+
+## REBUILDING DB AFTER SWITCHING TO ROLE AND INT ID'S
+> in terminal (main)
+  dotnet ef migrations add OrderEntityAdded -o Data/Migrations
+
+## ADDING YUP FOR FORM VALIDATION
+> in terminal
+  cd into <react app folder> ("client")
+    npm install @hookform/resolvers yup
