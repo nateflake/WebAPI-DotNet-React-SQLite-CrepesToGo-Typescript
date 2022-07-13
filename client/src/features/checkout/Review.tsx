@@ -8,9 +8,13 @@ export default function Review() {
   const { basket } = useAppSelector(state => state.basket)
   return (
     <>
-      <Typography variant="h6" gutterBottom>
-        Order summary
-      </Typography>
+      <Grid container rowSpacing={2} columnSpacing={2} justifyContent='center'>
+        <Grid item xs={12} sx={{ ml: 2 }}>
+          <Typography variant="h6" gutterBottom>
+            Order summary
+          </Typography>
+        </Grid>
+      </Grid>
       {
         basket &&
         <BasketTable items={basket.items} isBasket={false} />

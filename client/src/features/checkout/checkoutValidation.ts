@@ -4,15 +4,15 @@ export const validationSchema =
   [
     yup.object(
       {
-        fullName: yup.string().required('Full name is required'),
-        address1: yup.string().required('Address Line 1 is required'),
-        city: yup.string().required('City is required'),
-        state: yup.string().required('State is required'),
-        zip: yup.string().required('Zipcode is required'),
-        country: yup.string().required()
+        fullName: yup.string().required('required field'),
+        address1: yup.string().required('required field'),
+        city: yup.string().required('required field'),
+        state: yup.string().required('required field'),
+        zip: yup.string().required('required field'),
+        country: yup.string().required('required field')
       }),
     yup.object(),
     yup.object({
-      nameOnCard: yup.string().required('Name on Card is required')
+      nameOnCard: yup.string().required('required field')
     })
   ];

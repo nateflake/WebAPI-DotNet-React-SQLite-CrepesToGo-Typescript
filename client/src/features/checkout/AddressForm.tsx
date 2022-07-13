@@ -8,32 +8,39 @@ export default function AddressForm() {
   const { control, formState } = useFormContext();
   return (
     <>
-      <Typography variant="h6" gutterBottom>
-        Shipping address
-      </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={12}>
+      <Grid container rowSpacing={2} columnSpacing={2} justifyContent='center'>
+        <Grid item xs={12} sm={7} sx={{ ml: { xs: 1, sm: 0 } }}>
+          <Typography variant="h6" gutterBottom>
+            Shipping address
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={7}>
           <AppTextInput control={control} name='fullName' label='Full Name' />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={0} sm={12}></Grid>
+        <Grid item xs={12} sm={7}>
           <AppTextInput control={control} name='address1' label='Address Line 1' />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={0} sm={12}></Grid>
+        <Grid item xs={12} sm={7}>
           <AppTextInput control={control} name='address2' label='Address Line 2' />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={0} sm={12}></Grid>
+        <Grid item xs={12} sm={7}>
           <AppTextInput control={control} name='city' label='City' />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={0} sm={12}></Grid>
+        <Grid item xs={12} sm={2}>
           <AppTextInput control={control} name='state' label='State' />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={2}>
           <AppTextInput control={control} name='zip' label='Zipcode' />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={3}>
           <AppTextInput control={control} name='country' label='Country' />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={0} sm={12}></Grid>
+        <Grid item xs={12} sm={7}>
           <AppCheckbox
             disabled={!formState.isDirty}
             name='saveAddress'

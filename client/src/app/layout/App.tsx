@@ -13,14 +13,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import ServerError from "../errors/ServerError";
 import NotFound from "../errors/NotFound";
 import BasketPage from "../../features/basket/BasketPage";
-import CheckoutPage from "../../features/checkout/CheckoutPage";
 import { useAppDispatch } from "../store/configureStore";
-import { fetchBasketAsync, setBasket } from "../../features/basket/basketSlice";
+import { fetchBasketAsync } from "../../features/basket/basketSlice";
 import Login from "../../features/account/Login";
 import Register from "../../features/account/Register";
 import { fetchCurrentUser } from "../../features/account/accountSlice";
 import PrivateRoute from "./PrivateRoute";
 import Orders from "../../features/orders/Orders";
+import CheckoutWrapper from "../../features/checkout/CheckoutWrapper";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -65,7 +65,7 @@ function App() {
           <Route exact path='/catalog' component={Catalog}></Route>
           <Route path='/catalog/:id' component={ProductDetails}></Route>
           <Route path='/basket' component={BasketPage}></Route>
-          <PrivateRoute path='/checkout' component={CheckoutPage}></PrivateRoute>
+          <PrivateRoute path='/checkout' component={CheckoutWrapper}></PrivateRoute>
           <PrivateRoute path='/orders' component={Orders}></PrivateRoute>
           <Route path='/about' component={AboutPage}></Route>
           <Route path='/contact' component={ContactPage}></Route>
