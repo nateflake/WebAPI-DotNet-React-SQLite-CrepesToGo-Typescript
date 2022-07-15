@@ -59,22 +59,25 @@ function App() {
       <ToastContainer position='bottom-right' hideProgressBar />
       <CssBaseline />
       <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <Container>
-        <Switch>
-          <Route exact path='/' component={HomePage}></Route>
-          <Route exact path='/catalog' component={Catalog}></Route>
-          <Route path='/catalog/:id' component={ProductDetails}></Route>
-          <Route path='/basket' component={BasketPage}></Route>
-          <PrivateRoute path='/checkout' component={CheckoutWrapper}></PrivateRoute>
-          <PrivateRoute path='/orders' component={Orders}></PrivateRoute>
-          <Route path='/about' component={AboutPage}></Route>
-          <Route path='/contact' component={ContactPage}></Route>
-          <Route path='/login' component={Login}></Route>
-          <Route path='/register' component={Register}></Route>
-          <Route path='/server-error' component={ServerError}></Route>
-          <Route component={NotFound}></Route>
-        </Switch>
-      </Container>
+      <Route exact path='/' component={HomePage}></Route>
+      <Route path={'/(.+)'} render={() => (
+        <Container sx={{ mt: 8 }}>
+          <Switch>
+            <Route exact path='/catalog' component={Catalog}></Route>
+            <Route path='/catalog/:id' component={ProductDetails}></Route>
+            <Route path='/basket' component={BasketPage}></Route>
+            <PrivateRoute path='/checkout' component={CheckoutWrapper}></PrivateRoute>
+            <PrivateRoute path='/orders' component={Orders}></PrivateRoute>
+            <Route path='/about' component={AboutPage}></Route>
+            <Route path='/contact' component={ContactPage}></Route>
+            <Route path='/login' component={Login}></Route>
+            <Route path='/register' component={Register}></Route>
+            <Route path='/server-error' component={ServerError}></Route>
+            <Route component={NotFound}></Route>
+          </Switch>
+        </Container>
+      )}>
+      </Route>
     </ThemeProvider>
   );
 }
