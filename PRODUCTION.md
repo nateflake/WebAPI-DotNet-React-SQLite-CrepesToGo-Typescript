@@ -151,4 +151,9 @@
       ASPNETCORE_ENVIRONMENT => Production
 
 ## COMMIT TO HEROKU
-      
+- commit all changes
+> in Terminal (main)
+  - commit to GitHub
+    git push orgin main
+  - commit to Heroku
+    git push heroku main
