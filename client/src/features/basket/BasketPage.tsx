@@ -16,14 +16,9 @@ export default function BasketPage() {
         <Grid item xs={6}></Grid>
         <Grid item xs={6}>
           <BasketSummary />
-          <ButtonGroup>
-            <Button component={Link} to='/checkout' variant='contained' fullWidth color='warning'>
-              Drop All
-            </Button>
-            <Button component={Link} to='/checkout' variant='contained' fullWidth>
-              Checkout
-            </Button>
-          </ButtonGroup>
+          <Button component={Link} to='/checkout' variant='contained' fullWidth>
+            Checkout
+          </Button>
         </Grid>
       </Grid>
     </>
