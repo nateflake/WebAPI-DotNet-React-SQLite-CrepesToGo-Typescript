@@ -46,15 +46,5 @@
         stripe listen -f http://localhost:5000/api/payments/webhook -e charge.succeeded
 
       
-## PREPARE FOR LIVE VERSION
-> In stripe.com > Developers > Webhooks  
-  - select "add an endpoint" (button near bottom center of page) and login
-    - copy live url for main page (https://crepes-to-go.herokuapp.com/)
-    - paste into stripe.com "Endpoint URL" field WITH ... api/payments/webhook
-        ** correct if controller is named "payments" and crud operation (post) is called "webhook" **
-    - click " + Select events" button
-    - select ...
-      charge > charge.succeeded
-        ** the only one needed **
-    - click "add events"
-    - click "add endpoint"
+  
+    
