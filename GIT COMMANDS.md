@@ -8,4 +8,8 @@
   - push new branch
       git push -u origin <branch name>
         ** -u is for "upstream"
+  - delete remote branch
+      git push <branch name> -d <branch name>
+  - delete local branch
+      git branch -d <branch name>
 
