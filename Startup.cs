@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using API.Data;
 using API.Entities;
@@ -14,6 +15,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using WEB_API.RequestHelpers;
+using WEB_API.Services;
 
 namespace API
 {
@@ -30,6 +33,7 @@ namespace API
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddControllers();
+      services.AddAutoMapper(typeof(MappingProfiles).Assembly);
       services.AddSwaggerGen(c =>
       {
         c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIv5", Version = "v1" });
@@ -58,6 +62,7 @@ namespace API
             new List<string>()
           }
         });
+        c.ResolveConflictingActions(apiDescriptions => apiDescriptions.First());
       });
       /*  
       FOR POSTGRES ON LOCALHOST          
@@ -124,6 +129,7 @@ namespace API
       services.AddAuthorization();
       services.AddScoped<TokenService>();
       services.AddScoped<PaymentService>();
+      services.AddScoped<ImageService>();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
