@@ -11,7 +11,7 @@ import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
 import { clearBasket } from "../basket/basketSlice";
 import { LoadingButton } from "@mui/lab";
 import { StripeElementType } from "@stripe/stripe-js";
-import { CardNumberElement, PaymentRequestButtonElement, useElements, useStripe } from "@stripe/react-stripe-js";
+import { CardNumberElement, useElements, useStripe } from "@stripe/react-stripe-js";
 
 const steps = ['Shipping address', 'Review your order', 'Payment details'];
 
@@ -135,7 +135,7 @@ export default function CheckoutPage() {
           Checkout
         </Typography>
         <Grid container justifyContent='center'>
-          <Grid item sm={activeStep == 1 ? 12 : 8} >
+          <Grid item sm={activeStep === 1 ? 12 : 8} >
             <Stepper activeStep={activeStep}
               sx={{ pt: 3, pb: 5, pl: { xs: 0, sm: 3.5 }, pr: { xs: 0, sm: 5.5 } }}>
               {steps.map((label) => (
@@ -170,7 +170,7 @@ export default function CheckoutPage() {
                 {getStepContent(activeStep)}
 
 
-                <Grid item xs={12} sm={activeStep == 1 ? 12 : 7}>
+                <Grid item xs={12} sm={activeStep === 1 ? 12 : 7}>
                   <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
 
                     {activeStep !== 0 && (

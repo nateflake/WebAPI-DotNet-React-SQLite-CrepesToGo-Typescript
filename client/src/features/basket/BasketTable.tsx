@@ -2,7 +2,6 @@ import { Remove, Add, Delete } from "@mui/icons-material";
 import { LoadingButton } from "@mui/lab";
 import { TableContainer, Paper, Table, TableHead, TableRow, TableCell, Box, TableBody } from "@mui/material";
 import { BasketItem } from "../../app/models/basket";
-import { OrderItem } from "../../app/models/order";
 import { useAppDispatch, useAppSelector } from "../../app/store/configureStore";
 import { currencyFormat } from "../../app/util/util";
 import { removeBasketItemAsync, addBasketItemAsync } from "./basketSlice";

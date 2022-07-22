@@ -22,6 +22,7 @@ import PrivateRoute from "./PrivateRoute";
 import Orders from "../../features/orders/Orders";
 import CheckoutWrapper from "../../features/checkout/CheckoutWrapper";
 import Inventory from "../../features/admin/Inventory";
+import LoadingComponent from "./LoadingComponent";
 
 function App() {
   const dispatch = useAppDispatch();
@@ -54,6 +55,8 @@ function App() {
   function toggleDarkMode() {
     setDarkMode(!darkMode);
   }
+
+  if (loading) return <LoadingComponent message='Initialising app...' />
 
   return (
     <ThemeProvider theme={theme}>

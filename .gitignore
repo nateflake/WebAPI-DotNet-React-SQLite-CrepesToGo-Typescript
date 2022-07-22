@@ -442,8 +442,12 @@ $RECYCLE.BIN/
 ##
 ## Visual Studio Code
 ##
-.vscode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+API/appsettings.json
+
 store.db-shm
 store.db-wal
-
-REACT.md

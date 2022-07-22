@@ -22,10 +22,6 @@ export default function ProductDetails() {
     if (!product) dispatch(fetchProductAsync(parseInt(id)));
   }, [id, item, dispatch, product])
 
-  const itemCount = basket?.items.reduce((sum, item) => sum + item.quantity, 0);
-
-  const itemIndex = basket?.items.findIndex(i => i.productId === parseInt(id));
-
   function handleInputChange(event: any) {
     if (event.target.value >= 0) {
       setQuantity(parseInt(event.target.value));
@@ -33,7 +29,7 @@ export default function ProductDetails() {
   }
 
   function handleUpdateCart() {
-    if (!item || quantity > item.quantity) {
+    if ((!item) || (quantity > item.quantity)) {
       const updatedQuantity = item ? quantity - item.quantity : quantity;
       dispatch(addBasketItemAsync({ productId: product?.id!, quantity: updatedQuantity }))
     } else {
@@ -96,7 +92,7 @@ export default function ProductDetails() {
           </Grid>
           <Grid item xs={6}>
             <LoadingButton
-              disabled={item?.quantity === quantity || !item && quantity === 0}
+              disabled={(item?.quantity === quantity) || (!item && quantity === 0)}
               loading={status.includes('pending')}
               onClick={handleUpdateCart}
               sx={{ height: '55px' }}
