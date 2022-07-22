@@ -1,16 +1,3 @@
-using System.Linq;
-using System.Threading.Tasks;
-using API.Data;
-using API.Entities;
-using API.Extensions;
-using API.RequestHelpers;
-using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using WEB_API.DTOs;
-using WEB_API.Services;
-
 namespace API.Controllers
 {
   public class ProductsController : BaseApiCcontroller

@@ -157,3 +157,15 @@
     git push orgin main
   - commit to Heroku
     git push heroku main
+
+## CONFIGURE KEYS
+ > In Heroku.com
+  > in Settings tab (top horiz)
+    > in Config vars (left side vert)
+      - get vals 
+      • opt #1: find in Cloudinary dashboard
+      • opt #2: with terminal: dotnet user-secrets list
+      - set vals
+        • Cloudinary:CloudName => <cloud name>
+        • Cloudinary:ApiKey => <api key>    
+        • Cloudinary:ApiSecret =>  <user secret>
